@@ -6,6 +6,7 @@ class Article
 {
     private $id;
     private $title;
+    private $author;
     private $chapo;
     private $content;
     private $publicationStatus;
@@ -16,21 +17,31 @@ class Article
      * Article constructor.
      * @param $id
      * @param $title
+     * @param $author
      * @param $chapo
      * @param $content
      * @param $publicationStatus
      * @param $creationDate
      * @param $publicationDate
      */
-    public function __construct($id, $title, $chapo, $content, $publicationStatus, $creationDate, $publicationDate)
-    {
+    public function __construct(
+        $id,
+        $title,
+        $author,
+        $chapo,
+        $content,
+        $publicationStatus,
+        $creationDate,
+        $publicationDate = null
+    ) {
         $this->id = $id;
         $this->title = $title;
+        $this->author = $author;
         $this->chapo = $chapo;
         $this->content = $content;
         $this->publicationStatus = $publicationStatus;
         $this->creationDate = $creationDate;
-        $this->publicationDate = $publicationDate;
+        $this->publicationDate = $publicationDate == null ? "?" : $publicationDate;
     }
 
     /**
@@ -47,6 +58,22 @@ class Article
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param mixed $author
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
     }
 
     /**
@@ -143,5 +170,21 @@ class Article
     public function setPublicationDate($publicationDate)
     {
         $this->publicationDate = $publicationDate;
+    }
+
+    public function __get($property)
+    {
+        if (property_exists($this, $property)) {
+            return $this->$property;
+        }
+    }
+
+    public function __set($property, $value)
+    {
+        if (property_exists($this, $property)) {
+            $this->$property = $value;
+        }
+
+        return $this;
     }
 }

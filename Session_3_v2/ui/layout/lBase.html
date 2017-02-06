@@ -9,7 +9,7 @@
     <meta name="author" content="Habit Jérémy">
     <!--<link rel="icon" type="image/x-icon" href="{{ asset('media/icon_logo/favicon.png') }}"/>-->
 
-    <title>Mini Framework : <?= $title;?></title>
+    <title><?= $title;?></title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="ui/css/libraries/normalize.min.css" type="text/css">
@@ -21,7 +21,7 @@
 <?php include "ui/layout/lHeader.html"; ?>
 
 <!--BODY START-->
-<main class="mw marg-auto padd-50-top-bottom padd-15-top-bottom-xs">
+<main class="mw marg-auto padd-50-top-bottom padd-15-top-bottom-xs anim-zoom">
     <?= $content;?>
 </main>
 

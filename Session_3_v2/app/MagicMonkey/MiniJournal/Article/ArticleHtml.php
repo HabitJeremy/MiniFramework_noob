@@ -2,51 +2,39 @@
 
 namespace MagicMonkey\MiniJournal\Article;
 
-use \Exception;
-
 class ArticleHtml
 {
-
-    private $contentStart;
-    private $contentEnd;
+    private $startContent;
+    private $endContent;
 
     public function __construct()
     {
-        $this->contentStart = "<div class='row'><div class='cell-12'>";
-        $this->contentEnd = "</div></div>";
+        $this->startContent = "<div class='row'><div class='cell-12'>";
+        $this->endContent = "</div></div>";
     }
 
     /* default list all articles */
     public function listAll($lst)
     {
-        try {
-            $content = $this->contentStart;
-            $content .= "<ul>";
-            foreach ($lst as $article) {
-                $content .= "<li><a href='index.php?a=describeArticle&id=" . $article->getId() . "'>";
-                $content .= $article->getTitle() . "</a></li>";
-            }
-            $content .= "</ul>";
-            $content .= $this->contentEnd;
-            return $content;
-        } catch (Exception $ex) {
-            return false;
-        }
+        ob_start();
+        include 'views/vAllArticles.html';
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
     }
 
     /* show one article */
-    public function showOne($obj)
+    public function showOne($article)
     {
-        try {
-            $content = $this->contentStart;
-            $content .= "<a href='index.php'>Retour</a>";
-            $content .= "<h1>" . $obj->getTitle() . "</h1>";
-            $content .= "<p>" . $obj->getChapo() . "</p>";
-            $content .= "<p>" . $obj->getContent() . "</p>";
-            $content .= $this->contentEnd;
-            return $content;
-        } catch (Exception $ex) {
-            return false;
-        }
+        ob_start();
+        include 'views/vOneArticle.html';
+        $content = ob_get_contents();
+        ob_end_clean();
+        return $content;
+    }
+
+    public function errorMsg($msg)
+    {
+        return $this->startContent . "<p class='msg-error'>" . $msg . "</>" . $this->endContent;
     }
 }
