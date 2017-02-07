@@ -87,19 +87,35 @@ class ArticleBd
         return $res;
     }
 
+    /* modification d'un article => return false si error sinon true */
+    public function updateOne($postedData, $id)
+    {
+        try {
+            $postedData['id'] = $id;
+            $sql = 'UPDATE ' . self::TABLE_NAME;
+            $sql .= ' SET title = :title, author = :author, content = :content,';
+            $sql .= ' publication_status = :publication_status,';
+            $sql .= ' chapo = :chapo where id = :id';
+            $stmt = $this->dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+            return $stmt->execute($postedData);
+        } catch (Exception $ex) {
+            return false;
+        }
+    }
+
     /* ajout d'un article => return false si error sinon true*/
     public function addOne($postedData)
     {
         try {
             $postedData['creationDate'] = date("Y-m-d");
-            if ($postedData['status'] == "publie") {
+            if ($postedData['publication_status'] == "publie") {
                 $postedData['publicationDate'] = date("Y-m-d");
             } else {
                 $postedData['publicationDate'] = null;
             }
             $sql = 'INSERT INTO ' . self::TABLE_NAME;
             $sql .= ' (author, title, chapo, content, publication_status, creation_date, publication_date)';
-            $sql .= ' VALUES (:author, :title, :chapo, :content, :status, :creationDate, :publicationDate)';
+            $sql .= ' VALUES (:author, :title, :chapo, :content, :publication_status, :creationDate, :publicationDate)';
             $stmt = $this->dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             return $stmt->execute($postedData);
         } catch (Exception $ex) {
@@ -108,7 +124,7 @@ class ArticleBd
     }
 
     /* Creation d'un objet Article */
-    private function map($res)
+    public function map($res)
     {
         $this->cleaner->cleanerArray($res);
         return new Article($res['id'], $res['title'], $res['author'], $res['chapo'], $res['content'],

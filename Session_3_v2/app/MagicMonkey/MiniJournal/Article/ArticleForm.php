@@ -13,10 +13,12 @@ class ArticleForm
     const LSTVALIDSTATUS = array("brouillon", "publie");
 
     private $errors;
+    private $article;
 
     public function __construct()
     {
         $this->errors = array();
+        $this->article = new Article();
     }
 
     /* Permet l'affichage des notifications/messages afin d'informer l'utilisateur */
@@ -36,20 +38,22 @@ class ArticleForm
     }
 
     /* show form new article */
-    public function formNew($data = null)
+    public function formNewUpdate($obj = null, $h1 = "Ajout d'un article", $action = "new")
     {
+        if (!empty($obj)) {
+            $this->article = $obj;
+        }
         ob_start();
-        include 'views/vFormNew.html';
+        include 'views/vFormNewUpdate.html';
         $content = ob_get_contents();
         ob_end_clean();
         return $content;
     }
 
-    /* show form delete article */
-    public function formDelete($lst)
+    public function formSelectArticle($lst, $action = "delete")
     {
         ob_start();
-        include 'views/vFormDelete.html';
+        include 'views/vFormSelect.html';
         $content = ob_get_contents();
         ob_end_clean();
         return $content;
@@ -80,7 +84,9 @@ class ArticleForm
             $error = true;
         }
         /* status */
-        if (empty($postedData['status']) || !in_array($postedData['status'], self::LSTVALIDSTATUS)) {
+        if (empty($postedData['publication_status']) ||
+            !in_array($postedData['publication_status'], self::LSTVALIDSTATUS)
+        ) {
             $this->errors['errorStatus'] = "Le statut doit être indiqué et doit correspondre à un statut valide";
             $error = true;
         }
@@ -107,5 +113,21 @@ class ArticleForm
     public function addErrors($newItem)
     {
         array_push($this->errors, $newItem);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    /**
+     * @param mixed $article
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
     }
 }

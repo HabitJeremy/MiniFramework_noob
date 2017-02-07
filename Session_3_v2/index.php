@@ -18,21 +18,47 @@ $action = empty($_GET["a"]) ? "home" : $_GET["a"];
 
 switch ($action) {
     case "update":
-        $title = "Modification d'un article";
-
+        $articleBd = new ArticleBd();
+        $articleForm = new ArticleForm();
+        $articleHtml = new ArticleHtml();
+        if (empty($_GET['id'])) {
+            $title = "Liste des articles";
+            $articleHtml->setError("Aucun article demandé");
+            $content = $articleHtml->listAll($articleBd->selectAll());
+        } else {
+            $article = $articleBd->selectOne(array("id =" => (int)$_GET['id']));
+            if (empty($_POST)) {
+                if ($article) {
+                    $title = "Modification d'un article";
+                    $content = $articleForm->formNewUpdate($article, $title, "update&id=" . $article->getId());
+                } else {
+                    $articleHtml->setError("L'article demandé n'existe pas");
+                    $content = $articleHtml->listAll($articleBd->selectAll());
+                }
+            } else {
+                if (!$articleForm->validateNew($_POST)) { // verif du formulaire : si aucune erreur
+                    $articleBd->updateOne($_POST, $article->getId()); /* modification de l'article dans la bdd */
+                    $articleHtml->setSuccess("Modification effectuée");
+                    $content = $articleHtml->listAll($articleBd->selectAll());
+                } else { // s'il y a au moins une erreur
+                    $_POST['id'] = $_POST['creation_date'] = $_POST["publication_date"] = null;
+                    $article = $articleBd->map($_POST);
+                    $content = $articleForm->formNewUpdate($article, $title, "update");
+                }
+            }
+        }
         break;
     case "delete":
         $articleBd = new ArticleBd();
         $articleForm = new ArticleForm();
         $articleHtml = new ArticleHtml();
-        $lstObjsArticles = $articleBd->selectAll();
-        $title = "Suppression d'un article";
+        $title = "Choix d'un article";
         if ((empty($_GET['id']) && !empty($_POST['article'])) || !empty($_GET['id'])) {
             $id = empty($_GET['id']) ? $_POST['article'] : $_GET['id'];
             $res = $articleBd->deleteOne($id);
-            if (!$res && !empty($_POST['article'])) { //suppression
+            if (!$res && !empty($_POST['article'])) { //suppression par formulaire
                 $articleForm->setErrors(array("errorArticle" => "L'article doit être indiqué et doit existé"));
-                $content = $articleForm->formDelete($lstObjsArticles);
+                $content = $articleForm->formSelectArticle($articleBd->selectAll());
             } else {
                 if (!$res && !empty($_GET['id'])) {
                     $articleHtml->setError("Une erreur est survenue lors de la suppression de
@@ -40,26 +66,28 @@ switch ($action) {
                 } else {
                     $articleHtml->setSuccess("Suppression effectuée !");
                 }
-                $content = $articleHtml->listAll($lstObjsArticles);
+                $content = $articleHtml->listAll($articleBd->selectAll());
             }
         } else {
-            $content = $articleForm->formDelete($lstObjsArticles); // affichage du formulaire
+            $content = $articleForm->formSelectArticle($articleBd->selectAll());
         }
         break;
     case "new":
         $title = "Saisir un article";
         $articleForm = new ArticleForm();
         $articleHtml = new ArticleHtml();
+        $articleBd = new ArticleBd();
         if (empty($_POST)) {
-            $content = $articleForm->formNew();
+            $content = $articleForm->formNewUpdate();
         } else {
             if (!$articleForm->validateNew($_POST)) { // verif du formulaire : si aucune erreur
-                $articleBd = new ArticleBd();
                 $articleBd->addOne($_POST); /* enregistrement du nouvel article dans la bdd */
                 $articleHtml->setSuccess("Ajout effectué");
                 $content = $articleHtml->listAll($articleBd->selectAll());
             } else { // s'il y a au moins une erreur
-                $content = $articleForm->formNew($_POST);
+                $_POST['id'] = $_POST['creation_date'] = $_POST["publication_date"] = null;
+                $article = $articleBd->map($_POST);
+                $content = $articleForm->formNewUpdate($article);
             }
         }
         break;

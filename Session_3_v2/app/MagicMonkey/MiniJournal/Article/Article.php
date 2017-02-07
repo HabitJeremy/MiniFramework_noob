@@ -9,7 +9,7 @@ class Article
     private $author;
     private $chapo;
     private $content;
-    private $publicationStatus;
+    private $publication_status;
     private $creationDate;
     private $publicationDate;
 
@@ -20,18 +20,18 @@ class Article
      * @param $author
      * @param $chapo
      * @param $content
-     * @param $publicationStatus
+     * @param $publication_status
      * @param $creationDate
      * @param $publicationDate
      */
     public function __construct(
-        $id,
-        $title,
-        $author,
-        $chapo,
-        $content,
-        $publicationStatus,
-        $creationDate,
+        $id = null,
+        $title = null,
+        $author = null,
+        $chapo = null,
+        $content = null,
+        $publication_status = null,
+        $creationDate = null,
         $publicationDate = null
     ) {
         $this->id = $id;
@@ -39,7 +39,7 @@ class Article
         $this->author = $author;
         $this->chapo = $chapo;
         $this->content = $content;
-        $this->publicationStatus = $publicationStatus;
+        $this->publication_status = $publication_status;
         $this->creationDate = $creationDate;
         $this->publicationDate = $publicationDate == null ? "?" : $publicationDate;
     }
@@ -125,19 +125,19 @@ class Article
     }
 
     /**
-     * @return mixed
+     * @return null
      */
     public function getPublicationStatus()
     {
-        return $this->publicationStatus;
+        return $this->publication_status;
     }
 
     /**
-     * @param mixed $publicationStatus
+     * @param null $publication_status
      */
-    public function setPublicationStatus($publicationStatus)
+    public function setPublicationStatus($publication_status)
     {
-        $this->publicationStatus = $publicationStatus;
+        $this->publication_status = $publication_status;
     }
 
     /**
