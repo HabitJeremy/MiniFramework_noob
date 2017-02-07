@@ -10,6 +10,7 @@ use MagicMonkey\Tools\Database\Cleaner;
 class ArticleBd
 {
     const TABLE_NAME = "article";
+
     private $dbh;
     private $cleaner;
 
@@ -73,7 +74,7 @@ class ArticleBd
         }
     }
 
-    /* suppression d'un article => return false si error sinon => redirection */
+    /* suppression d'un article => return false si error sinon true */
     public function deleteOne($id)
     {
         $res = false;
@@ -81,15 +82,12 @@ class ArticleBd
         if ($article) {
             $sql = 'DELETE from ' . self::TABLE_NAME . ' where id = :id';
             $stmt = $this->dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-            if ($stmt->execute(array(":id" => $id))) {
-                header('Location: index.php'); // redirection
-                exit();
-            }
+            return $stmt->execute(array(":id" => $id));
         }
         return $res;
     }
 
-    /* ajout d'un article */
+    /* ajout d'un article => return false si error sinon true*/
     public function addOne($postedData)
     {
         try {
@@ -109,29 +107,11 @@ class ArticleBd
         }
     }
 
-    /* Creation of an object Article */
+    /* Creation d'un objet Article */
     private function map($res)
     {
         $this->cleaner->cleanerArray($res);
         return new Article($res['id'], $res['title'], $res['author'], $res['chapo'], $res['content'],
             $res['publication_status'], $res['creation_date'], $res['publication_date']);
-    }
-
-    /* ### GETTERS & SETTERS ###*/
-
-    /**
-     * @return mixed
-     */
-    public function getDbh()
-    {
-        return $this->dbh;
-    }
-
-    /**
-     * @param mixed $dbh
-     */
-    public function setDbh($dbh)
-    {
-        $this->dbh = $dbh;
     }
 }

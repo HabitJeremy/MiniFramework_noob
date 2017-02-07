@@ -8,7 +8,7 @@
         <!--  article -->
         <div class="groupform-large">
             <label class="required" for="article">Article à supprimer</label>
-            <?= $flash->flash("errorArticle", true); ?>
+            <?= $this->showMsg("errorArticle"); ?>
             <select class="padd-15" name="article" id="article">
                 <?php
                     foreach($lst as $article)

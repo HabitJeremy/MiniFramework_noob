@@ -24,19 +24,23 @@ switch ($action) {
     case "delete":
         $articleBd = new ArticleBd();
         $articleForm = new ArticleForm();
+        $articleHtml = new ArticleHtml();
         $lstObjsArticles = $articleBd->selectAll();
         $title = "Suppression d'un article";
         if ((empty($_GET['id']) && !empty($_POST['article'])) || !empty($_GET['id'])) {
             $id = empty($_GET['id']) ? $_POST['article'] : $_GET['id'];
-            if (!$articleBd->deleteOne($id)) { //suppression
-                if (!empty($_POST['article'])) {
-                    $_SESSION['errorArticle'] = "L'article doit être indiqué et doit existé";
-                    $content = $articleForm->formDelete($lstObjsArticles);
+            $res = $articleBd->deleteOne($id);
+            if (!$res && !empty($_POST['article'])) { //suppression
+                $articleForm->setErrors(array("errorArticle" => "L'article doit être indiqué et doit existé"));
+                $content = $articleForm->formDelete($lstObjsArticles);
+            } else {
+                if (!$res && !empty($_GET['id'])) {
+                    $articleHtml->setError("Une erreur est survenue lors de la suppression de
+                       l'article ! Il se peut que l'article n'existe plus.");
                 } else {
-                    $title = "Error lors de la suppression de l'article";
-                    $content = (new ArticleHtml())->errorMsg("Une erreur est survenue lors de la suppression de
-                    l'article ! Il se peut que l'article n'existe plus.");
+                    $articleHtml->setSuccess("Suppression effectuée !");
                 }
+                $content = $articleHtml->listAll($lstObjsArticles);
             }
         } else {
             $content = $articleForm->formDelete($lstObjsArticles); // affichage du formulaire
@@ -45,13 +49,15 @@ switch ($action) {
     case "new":
         $title = "Saisir un article";
         $articleForm = new ArticleForm();
+        $articleHtml = new ArticleHtml();
         if (empty($_POST)) {
             $content = $articleForm->formNew();
         } else {
             if (!$articleForm->validateNew($_POST)) { // verif du formulaire : si aucune erreur
-                (new ArticleBd())->addOne($_POST); /* enregistrement du nouvel article dans la bdd */
-                header('Location: index.php'); // redirection
-                exit();
+                $articleBd = new ArticleBd();
+                $articleBd->addOne($_POST); /* enregistrement du nouvel article dans la bdd */
+                $articleHtml->setSuccess("Ajout effectué");
+                $content = $articleHtml->listAll($articleBd->selectAll());
             } else { // s'il y a au moins une erreur
                 $content = $articleForm->formNew($_POST);
             }
@@ -63,18 +69,20 @@ switch ($action) {
         $content = (new ArticleHtml())->listAll($lstObjsArticles);
         break;
     case "describe":
+        $articleHtml = new ArticleHtml();
+        $articleBd = new ArticleBd();
         if (!empty($_GET["id"])) {
-            $articleHtml = new ArticleHtml();
             $article = (new ArticleBd())->selectOne(array("id =" => (int)$_GET['id']));
             if (!$article) {
-                $title = "Article inexistant";
-                $content = $articleHtml->errorMsg("L'article demandé n'existe pas !");
+                $articleHtml->setError("L'article demandé n'existe pas");
+                $content = $articleHtml->listAll($articleBd->selectAll());
             } else {
                 $title = "Détails d'un article";
                 $content = $articleHtml->showOne($article);
             }
         } else {
-            /*   si pas d'id renseigné ??? à@@@@@@@@@@  ! !! ! ! */
+            $articleHtml->setError("Aucun article demandé");
+            $content = $articleHtml->listAll($articleBd->selectAll());
         }
         break;
     default:

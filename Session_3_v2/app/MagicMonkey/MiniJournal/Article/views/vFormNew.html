@@ -8,21 +8,21 @@
         <!-- author -->
         <div class="groupform-large">
             <label class="required" for="author">Auteur</label>
-            <?= $flash->flash("errorAuthor", true); ?>
+            <?= $this->showMsg("errorAuthor"); ?>
             <input class="padd-15" type="text" name="author" id="author" required placeholder="un auteur" maxlength="255"
                    value="<?= !empty($data['author']) ? $data['author'] : '' ?>"/>
         </div>
         <!-- title -->
         <div class="groupform-large">
             <label class="required" for="title">Titre</label>
-            <?= $flash->flash("errorTitle", true); ?>
+            <?= $this->showMsg("errorTitle"); ?>
             <input class="padd-15" type="text" name="title" id="title" required placeholder="un titre" maxlength="255"
                    value="<?= !empty($data['title']) ? $data['title'] : '' ?>"/>
         </div>
         <!--  status -->
         <div class="groupform-large">
             <label class="required" for="status">Statut de publication</label>
-            <?= $flash->flash("errorStatus", true); ?>
+            <?= $this->showMsg("errorStatus"); ?>
             <select class="padd-15" name="status" id="status">
                 <option value="brouillon"
                 <?= $data['status'] == "brouillon" ? "selected" : ""; ?>>Brouillon</option>
@@ -33,14 +33,14 @@
         <!-- chapo -->
         <div class="groupform-large">
             <label class="required" for="chapo">Chapo</label>
-            <?= $flash->flash("errorChapo", true); ?>
+            <?= $this->showMsg("errorChapo"); ?>
             <textarea class="padd-15" id="chapo" name="chapo" rows="5" placeholder="un chapo ..."
                       required><?= !empty($data['chapo']) ? $data['chapo'] : '' ?></textarea>
         </div>
         <!-- content -->
         <div class="groupform-large">
             <label class="required" for="content">Contenu</label>
-            <?= $flash->flash("errorContent", true); ?>
+            <?= $this->showMsg("errorContent"); ?>
             <textarea class="padd-15" id="content" name="content" rows="10" placeholder="un contenu ..."
                       required><?= !empty($data['content']) ? $data['content'] : '' ?></textarea>
         </div>

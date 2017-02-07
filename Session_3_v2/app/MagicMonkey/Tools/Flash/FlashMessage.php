@@ -26,17 +26,21 @@ class FlashMessage
     /*
         * Permet d'afficher la valeur d'une variable de session puis de la détruire
         * Paramètres :
-*          - $name : nom de la variable de session
-*          - $error : détermine l'affichage de la variable de session (false => la valeur , true => valeur + tags html)
+            *- $name : nom de la variable de session
+            *- $error et $success : détermine l'affichage de la variable de session
        */
-    public function flash($name, $error = false)
+    public function flash($name, $error = false, $success = false)
     {
+        $class = "error";
         if (!empty($_SESSION[$name])) {
-            if (!$error) {
+            if (!$error && !$success) {
                 echo $_SESSION[$name]; // variable de session de "valeur"
             } else {
+                if ($success) {
+                    $class = "success";
+                }
                 // variable de session "d'erreur"
-                echo "<span class='msg-error marg-10-bottom'>" . $_SESSION[$name] . "</span>";
+                echo "<span class='msg-" . $class . " marg-10-bottom'>" . $_SESSION[$name] . "</span>";
             }
             unset($_SESSION[$name]); // destruction de la variabe de session
         }

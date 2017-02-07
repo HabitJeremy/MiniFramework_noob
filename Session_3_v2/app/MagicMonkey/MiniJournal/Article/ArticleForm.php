@@ -8,16 +8,36 @@
 
 namespace MagicMonkey\MiniJournal\Article;
 
-use MagicMonkey\Tools\Flash\FlashMessage;
-
 class ArticleForm
 {
     const LSTVALIDSTATUS = array("brouillon", "publie");
 
+    private $errors;
+
+    public function __construct()
+    {
+        $this->errors = array();
+    }
+
+    /* Permet l'affichage des notifications/messages afin d'informer l'utilisateur */
+    public function showMsg($key, $error = true)
+    {
+        $res = "";
+        if (array_key_exists($key, $this->errors)) {
+            $class = "error";
+            if (!$error) {
+                $class = "success";
+            }
+            $res = "<p class='msg-" . $class . " marg-10-bottom'>";
+            $res .= $this->errors[$key];
+            $res .= "</p>";
+        }
+        return $res;
+    }
+
     /* show form new article */
     public function formNew($data = null)
     {
-        $flash = FlashMessage::getInstance();
         ob_start();
         include 'views/vFormNew.html';
         $content = ob_get_contents();
@@ -25,9 +45,9 @@ class ArticleForm
         return $content;
     }
 
+    /* show form delete article */
     public function formDelete($lst)
     {
-        $flash = FlashMessage::getInstance();
         ob_start();
         include 'views/vFormDelete.html';
         $content = ob_get_contents();
@@ -35,35 +55,57 @@ class ArticleForm
         return $content;
     }
 
-    /* Permet la vérifiction des données du formulaire */
+    /* Permet la vérifiction des données du formulaire " Nouveau " */
     public function validateNew($postedData)
     {
         $error = false;
         /* title */
         if (empty($postedData['title']) || (strlen($postedData['title']) > 255)) {
             $error = true;
-            $_SESSION['errorTitle'] = "Le titre doit être renseigné et ne doit pas dépasser 255 caractères";
+            $this->errors["errorTitle"] = "Le titre doit être renseigné et ne doit pas dépasser 255 caractères";
         }
         /* author */
         if (empty($postedData['author']) || (strlen($postedData['author']) > 255)) {
-            $_SESSION['errorAuthor'] = "L'auteur doit être renseigné et ne doit pas dépasser 255 caractères";
+            $this->errors["errorAuthor"] = "L'auteur doit être renseigné et ne doit pas dépasser 255 caractères";
             $error = true;
         }
         /* content */
         if (empty($postedData['content'])) {
-            $_SESSION['errorContent'] = "Le contenu doit être renseigné";
+            $this->errors["errorContent"] = "Le contenu doit être renseigné";
             $error = true;
         }
         /* chapo */
         if (empty($postedData['chapo'])) {
-            $_SESSION['errorChapo'] = "Le 'chapo' doit être renseigné";
+            $this->errors["errorChapo"] = "Le 'chapo' doit être renseigné";
             $error = true;
         }
         /* status */
         if (empty($postedData['status']) || !in_array($postedData['status'], self::LSTVALIDSTATUS)) {
-            $_SESSION['errorStatus'] = "Le statut doit être indiqué et doit correspondre à un statut valide";
+            $this->errors['errorStatus'] = "Le statut doit être indiqué et doit correspondre à un statut valide";
             $error = true;
         }
         return $error;
+    }
+
+    /**
+     * @return array
+     */
+    public function getErrors()
+    {
+        return $this->errors;
+    }
+
+    /**
+     * @param array $errors
+     */
+    public function setErrors($errors)
+    {
+        $this->errors = $errors;
+    }
+
+    /* ajout d'une erreur dans l'array errors */
+    public function addErrors($newItem)
+    {
+        array_push($this->errors, $newItem);
     }
 }
