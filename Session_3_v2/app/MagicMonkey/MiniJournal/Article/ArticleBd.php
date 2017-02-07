@@ -27,7 +27,7 @@ class ArticleBd
     /* ### SQL FUNCTIONS ### */
 
     /* select one */
-    public function selectOne(array $conditions)
+    public function selectOne(array $conditions, $nl2br = true)
     {
         try {
             $lstPrepare = array();
@@ -45,7 +45,7 @@ class ArticleBd
             $stmt->execute($lstPrepare);
             $res = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($res) {
-                return $this->map($res);
+                return $this->map($res, $nl2br);
             } else {
                 return $res;
             }
@@ -63,7 +63,7 @@ class ArticleBd
             $stmt = $this->dbh->query($sql);
             if ($res = $stmt->fetchAll(PDO::FETCH_ASSOC)) {
                 foreach ($res as $row) {
-                    array_push($lstObjsArticle, $this->map($row));
+                    array_push($lstObjsArticle, $this->map($row, true));
                 }
                 return $lstObjsArticle;
             } else {
@@ -107,15 +107,16 @@ class ArticleBd
     public function addOne($postedData)
     {
         try {
-            $postedData['creationDate'] = date("Y-m-d");
+            $postedData['creation_date'] = date("Y-m-d");
             if ($postedData['publication_status'] == "publie") {
-                $postedData['publicationDate'] = date("Y-m-d");
+                $postedData['publication_date'] = date("Y-m-d");
             } else {
-                $postedData['publicationDate'] = null;
+                $postedData['publication_date'] = null;
             }
             $sql = 'INSERT INTO ' . self::TABLE_NAME;
             $sql .= ' (author, title, chapo, content, publication_status, creation_date, publication_date)';
-            $sql .= ' VALUES (:author, :title, :chapo, :content, :publication_status, :creationDate, :publicationDate)';
+            $sql .= ' VALUES ';
+            $sql .= '(:author, :title, :chapo, :content, :publication_status, :creation_date, :publication_date)';
             $stmt = $this->dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
             return $stmt->execute($postedData);
         } catch (Exception $ex) {
@@ -124,9 +125,11 @@ class ArticleBd
     }
 
     /* Creation d'un objet Article */
-    public function map($res)
+    public function map($res, $nl2br = false)
     {
-        $this->cleaner->cleanerArray($res);
+        if ($nl2br) {
+            $this->cleaner->cleanerArray($res);
+        }
         return new Article($res['id'], $res['title'], $res['author'], $res['chapo'], $res['content'],
             $res['publication_status'], $res['creation_date'], $res['publication_date']);
     }

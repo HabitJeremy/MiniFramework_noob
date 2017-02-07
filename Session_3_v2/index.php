@@ -26,24 +26,28 @@ switch ($action) {
             $articleHtml->setError("Aucun article demandé");
             $content = $articleHtml->listAll($articleBd->selectAll());
         } else {
-            $article = $articleBd->selectOne(array("id =" => (int)$_GET['id']));
+            $article = $articleBd->selectOne(array("id =" => (int)$_GET['id']), false);
             if (empty($_POST)) {
                 if ($article) {
                     $title = "Modification d'un article";
                     $content = $articleForm->formNewUpdate($article, $title, "update&id=" . $article->getId());
                 } else {
+                    $title = "Article inexistant";
                     $articleHtml->setError("L'article demandé n'existe pas");
                     $content = $articleHtml->listAll($articleBd->selectAll());
                 }
             } else {
                 if (!$articleForm->validateNew($_POST)) { // verif du formulaire : si aucune erreur
-                    $articleBd->updateOne($_POST, $article->getId()); /* modification de l'article dans la bdd */
+                    $articleBd->updateOne($_POST, $article->getId());/* modification de l'article dans la bdd */
+                    $newArticle = $articleBd->selectOne(array("id =" => (int)$article->getId()));
                     $articleHtml->setSuccess("Modification effectuée");
-                    $content = $articleHtml->listAll($articleBd->selectAll());
+                    $content = $articleHtml->showOne($newArticle);
+                    /* $content = $articleHtml->listAll($articleBd->selectAll());*/
                 } else { // s'il y a au moins une erreur
+                    $title = "Modification d'un article";
                     $_POST['id'] = $_POST['creation_date'] = $_POST["publication_date"] = null;
-                    $article = $articleBd->map($_POST);
-                    $content = $articleForm->formNewUpdate($article, $title, "update");
+                    $tempArticle = $articleBd->map($_POST);
+                    $content = $articleForm->formNewUpdate($tempArticle, $title, "update&id=" . $article->getId());
                 }
             }
         }
@@ -102,14 +106,16 @@ switch ($action) {
         if (!empty($_GET["id"])) {
             $article = (new ArticleBd())->selectOne(array("id =" => (int)$_GET['id']));
             if (!$article) {
-                $articleHtml->setError("L'article demandé n'existe pas");
+                $title = "L'article demandé n'existe pas";
+                $articleHtml->setError($title);
                 $content = $articleHtml->listAll($articleBd->selectAll());
             } else {
                 $title = "Détails d'un article";
                 $content = $articleHtml->showOne($article);
             }
         } else {
-            $articleHtml->setError("Aucun article demandé");
+            $title = "Aucun article demandé";
+            $articleHtml->setError($title);
             $content = $articleHtml->listAll($articleBd->selectAll());
         }
         break;

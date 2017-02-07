@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60d8faf4-2015-45fa-b1c4-fdd8ba31e5fe" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormDelete.html" afterPath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormSelect.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormNew.html" afterPath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormNewUpdate.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/Article.php" afterPath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/Article.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleBd.php" afterPath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleBd.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleForm.php" afterPath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vAllArticles.html" afterPath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vAllArticles.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vOneArticle.html" afterPath="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vOneArticle.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session_3_v2/index.php" afterPath="$PROJECT_DIR$/Session_3_v2/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session_3_v2/ui/layout/lHeader.html" afterPath="$PROJECT_DIR$/Session_3_v2/ui/layout/lHeader.html" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,89 +26,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Session_3_v2/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-              <folding>
-                <element signature="e#43#89#0#PHP" expanded="true" />
-                <element signature="e#4234#4425#0#PHP" expanded="false" />
-                <element signature="e#4430#5145#0#PHP" expanded="false" />
-                <element signature="e#5150#5341#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleHtml.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleHtml.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vOneArticle.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vOneArticle.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="100" selection-start-line="6" selection-start-column="100" selection-end-line="6" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vFormNewUpdate.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormNewUpdate.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleForm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Article.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/Article.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-263">
-              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ArticleBd.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleBd.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+            <state relative-caret-position="486">
+              <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
               <folding>
                 <element signature="e#51#66#0#PHP" expanded="true" />
-                <element signature="e#551#1458#0#PHP" expanded="false" />
-                <element signature="e#1485#2039#0#PHP" expanded="false" />
-                <marker date="1486490397697" expanded="true" signature="671:684" ph="SELECT * fro... " />
-                <marker date="1486490397697" expanded="true" signature="671:715" ph="SELECT * fro... where" />
-                <marker date="1486490397697" expanded="true" signature="1592:1605" ph="SELECT * fro... " />
-                <marker date="1486490397697" expanded="true" signature="1592:1606" ph="SELECT * fro... ${self::TABLE_NAME}" />
-                <marker date="1486490397697" expanded="true" signature="2283:2334" ph="DELETE from " />
-                <marker date="1486490397697" expanded="true" signature="3590:3602" ph="INSERT INTO ${self::TABLE_NAME}... " />
-                <marker date="1486490397697" expanded="true" signature="3590:3622" ph="INSERT INTO ${self::TABLE_NAME}... " />
-                <marker date="1486490397697" expanded="true" signature="3590:3947" ph="INSERT INTO " />
-                <marker date="1486490397697" expanded="true" signature="4078:4111" ph="/* Creation " />
+                <marker date="1486498818639" expanded="true" signature="686:699" ph="SELECT * fro... " />
+                <marker date="1486498818639" expanded="true" signature="686:730" ph="SELECT * fro... where" />
+                <marker date="1486498818639" expanded="true" signature="1615:1628" ph="SELECT * fro... " />
+                <marker date="1486498818639" expanded="true" signature="1615:1629" ph="SELECT * fro... ${self::TABLE_NAME}" />
+                <marker date="1486498818639" expanded="true" signature="2312:2363" ph="DELETE from " />
+                <marker date="1486498818639" expanded="true" signature="3605:3658" ph="INSERT INTO ${self::TABLE_NAME}... " />
+                <marker date="1486498818639" expanded="true" signature="3605:4009" ph="INSERT INTO " />
+                <marker date="1486498818639" expanded="true" signature="3626:3638" ph="INSERT INTO ${self::TABLE_NAME}... " />
+                <marker date="1486498818639" expanded="true" signature="4140:4173" ph="/* Creation " />
               </folding>
             </state>
           </provider>
@@ -172,16 +102,16 @@
         <option value="$PROJECT_DIR$/Session_3_v2/ui/layout/lBase.html" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/Tools/Flash/FlashMessage.php" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormDelete.html" />
-        <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vAllArticles.html" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleHtml.php" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormUpdate.html" />
         <option value="$PROJECT_DIR$/Session_3_v2/ui/layout/lHeader.html" />
-        <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vOneArticle.html" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/Article.php" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormNew.html" />
-        <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleForm.php" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormNewUpdate.html" />
+        <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vAllArticles.html" />
+        <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleForm.php" />
         <option value="$PROJECT_DIR$/Session_3_v2/index.php" />
+        <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vOneArticle.html" />
         <option value="$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleBd.php" />
       </list>
     </option>
@@ -490,25 +420,25 @@
       <workItem from="1486375141624" duration="3555000" />
       <workItem from="1486383444306" duration="32424000" />
       <workItem from="1486422547822" duration="6425000" />
-      <workItem from="1486459196877" duration="16507000" />
+      <workItem from="1486459196877" duration="21352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99138000" />
+    <option name="totallyTimeSpent" value="103983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23987207" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14072494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6327194" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6327194" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -555,18 +485,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/useless/outils_bd.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/useless/products.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -594,13 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Session_1/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -789,26 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vAllArticles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/Tools/Flash/FlashMessage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="655">
           <caret line="42" column="70" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/Tools/Database/Cleaner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -829,38 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vOneArticle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="100" selection-start-line="6" selection-start-column="100" selection-end-line="6" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleHtml.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormNewUpdate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/Article.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-263">
@@ -869,36 +737,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Session_1/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <marker date="1485796791101" expanded="true" signature="410:495" ph="SELECT produ... products" />
+            <marker date="1485796791101" expanded="true" signature="1118:1140" ph="SELECT * fro... products" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/Tools/Database/Cleaner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="86" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session_3_v1/app/MagicMonkey/MiniJournal/Article/ArticleHtml.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleHtml.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="28" selection-end-line="55" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vFormNewUpdate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="65" column="19" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Session_3_v2/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        <state relative-caret-position="719">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding>
             <element signature="e#43#89#0#PHP" expanded="true" />
-            <element signature="e#4234#4425#0#PHP" expanded="false" />
-            <element signature="e#4430#5145#0#PHP" expanded="false" />
-            <element signature="e#5150#5341#0#PHP" expanded="false" />
+            <element signature="e#2407#3642#0#PHP" expanded="false" />
+            <element signature="e#4551#4742#0#PHP" expanded="false" />
+            <element signature="e#5529#5720#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vAllArticles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/views/vOneArticle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Session_3_v2/app/MagicMonkey/MiniJournal/Article/ArticleBd.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+        <state relative-caret-position="486">
+          <caret line="123" column="9" selection-start-line="123" selection-start-column="9" selection-end-line="123" selection-end-column="9" />
           <folding>
             <element signature="e#51#66#0#PHP" expanded="true" />
-            <element signature="e#551#1458#0#PHP" expanded="false" />
-            <element signature="e#1485#2039#0#PHP" expanded="false" />
-            <marker date="1486490397697" expanded="true" signature="671:684" ph="SELECT * fro... " />
-            <marker date="1486490397697" expanded="true" signature="671:715" ph="SELECT * fro... where" />
-            <marker date="1486490397697" expanded="true" signature="1592:1605" ph="SELECT * fro... " />
-            <marker date="1486490397697" expanded="true" signature="1592:1606" ph="SELECT * fro... ${self::TABLE_NAME}" />
-            <marker date="1486490397697" expanded="true" signature="2283:2334" ph="DELETE from " />
-            <marker date="1486490397697" expanded="true" signature="3590:3602" ph="INSERT INTO ${self::TABLE_NAME}... " />
-            <marker date="1486490397697" expanded="true" signature="3590:3622" ph="INSERT INTO ${self::TABLE_NAME}... " />
-            <marker date="1486490397697" expanded="true" signature="3590:3947" ph="INSERT INTO " />
-            <marker date="1486490397697" expanded="true" signature="4078:4111" ph="/* Creation " />
+            <marker date="1486498818639" expanded="true" signature="686:699" ph="SELECT * fro... " />
+            <marker date="1486498818639" expanded="true" signature="686:730" ph="SELECT * fro... where" />
+            <marker date="1486498818639" expanded="true" signature="1615:1628" ph="SELECT * fro... " />
+            <marker date="1486498818639" expanded="true" signature="1615:1629" ph="SELECT * fro... ${self::TABLE_NAME}" />
+            <marker date="1486498818639" expanded="true" signature="2312:2363" ph="DELETE from " />
+            <marker date="1486498818639" expanded="true" signature="3605:3658" ph="INSERT INTO ${self::TABLE_NAME}... " />
+            <marker date="1486498818639" expanded="true" signature="3605:4009" ph="INSERT INTO " />
+            <marker date="1486498818639" expanded="true" signature="3626:3638" ph="INSERT INTO ${self::TABLE_NAME}... " />
+            <marker date="1486498818639" expanded="true" signature="4140:4173" ph="/* Creation " />
           </folding>
         </state>
       </provider>

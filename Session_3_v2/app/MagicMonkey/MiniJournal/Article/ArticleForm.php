@@ -30,9 +30,9 @@ class ArticleForm
             if (!$error) {
                 $class = "success";
             }
-            $res = "<p class='msg-" . $class . " marg-10-bottom'>";
+            $res = "<span class='msg-" . $class . " marg-10-bottom'>";
             $res .= $this->errors[$key];
-            $res .= "</p>";
+            $res .= "</span>";
         }
         return $res;
     }
